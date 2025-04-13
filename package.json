@@ -1,0 +1,17 @@
+{
+  "name": "wordcount-go-awsm",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build-wasm": "cd go && $env:GOOS=\"js\" && $env:GOARCH=\"wasm\" && go build -o ../public/wordcount.wasm ./wasm/wordcount.go",
+    "copy-wasm-exec": "echo $env:GOROOT=$(go env GOROOT) && Copy-Item \"$(go env GOROOT)/misc/wasm/wasm_exec.js\" -Destination \"./public/\""
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}

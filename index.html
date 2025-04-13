@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Count - TS & Go WebAssembly</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Word Count</h1>
+      
+      <div class="input-container">
+        <textarea id="textInput" placeholder="请在此输入文本..." rows="10" cols="50"></textarea>
+      </div>
+      
+      <div class="buttons-container">
+        <button id="countByTs">split & count by typescript</button>
+        <button id="countByGo">split & count by go</button>
+        <button id="splitByGoCountByTs">split by go, count by go</button>
+      </div>
+      
+      <div class="results-container">
+        <h2>结果：</h2>
+        <div>运行时间: <span id="executionTime">0</span> ms</div>
+        <div id="resultDisplay"></div>
+      </div>
+    </div>
+    
+    <script src="/public/wasm_exec.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
